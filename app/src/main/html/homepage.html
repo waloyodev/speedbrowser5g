@@ -1,0 +1,123 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta content="en-us" http-equiv="Content-Language" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>${TITLE}</title>
+</head>
+<style>
+body{
+	background:#f5f5f5;text-align:center;margin:0px;
+}
+#search_input{
+	height:35px;
+	width:100%;
+	outline:none;
+	border:none;
+	font-size: 16px;
+	background-color:transparent;
+}
+div.favicon_all{margin:0 5%}
+div.favicon_img{width:21%;margin:2%;float:left}
+div.favicon_img img {width:75%;height:auto}
+div.favicon_name{padding:2%;text-align:center;font-size:80%}
+span {
+	display: block;
+	overflow: hidden;
+	padding-left:5px;
+	vertical-align:middle;
+}
+.search_bar{
+	display:table;
+	vertical-align:middle;
+	width:90%;
+	height:35px;
+	max-width:500px;
+	margin:0 auto;
+	background-color:#fff;
+	box-shadow: 0px 2px 3px rgba( 0, 0, 0, 0.25 );
+	font-family: Arial;
+	color: #444;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+}
+#search_submit{
+	outline:none;
+	height:37px;
+	float:right;
+	color:#404040;
+	font-size:16px;
+	font-weight:bold;
+	border:none;
+	background-color:transparent;
+}
+.outer {
+	display: table;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+.middle {
+	display: table-cell;
+	vertical-align: middle;
+}
+.inner {
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom:10%;
+	width: 100%;
+}
+img.smaller{width:50%;max-width:300px;}
+.box {
+	vertical-align:middle;
+	position:relative;
+	display: block;
+	margin: 10px;
+	padding-left:10px;
+	padding-right:10px;
+	padding-top:5px;
+	padding-bottom:5px;
+	background-color:#fff;
+	box-shadow: 0px 3px rgba( 0, 0, 0, 0.1 );
+	font-family: Arial;
+	color: #444;
+	font-size: 12px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+}
+</style>
+
+<body>
+<div class="outer">
+    <div class="middle"><div class="inner">
+        <img id="image_url" class="smaller" src="${IMAGE}">
+        </br></br>
+
+        <form onsubmit="return search()" class="search_bar" autocomplete="off">
+            <input type="submit" id="search_submit" value="Search" >
+            <span>
+		<input class="search" type="text" value="" id="search_input" >
+	</span>
+        </form>
+
+        </br></br>
+        <div class="favicon_all">
+            <div class="favicon_img"><a href="https://facebook.com"><img style="width: 50px" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8IS0tIENyZWF0b3I6IENvcmVsRFJBVyBYNyAtLT4NCjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMjM3cHgiIGhlaWdodD0iMjM3cHgiIHZlcnNpb249IjEuMSIgc2hhcGUtcmVuZGVyaW5nPSJnZW9tZXRyaWNQcmVjaXNpb24iIHRleHQtcmVuZGVyaW5nPSJnZW9tZXRyaWNQcmVjaXNpb24iIGltYWdlLXJlbmRlcmluZz0ib3B0aW1pemVRdWFsaXR5IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCINCnZpZXdCb3g9IjAgMCAyMzE3IDIzMTciDQogeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPg0KIDxnIGlkPSJMYXllcl94MDAyMF8xIj4NCiAgPG1ldGFkYXRhIGlkPSJDb3JlbENvcnBJRF8wQ29yZWwtTGF5ZXIiLz4NCiAgPHJlY3QgZmlsbD0iIzMyNTA5NCIgd2lkdGg9IjIzMTciIGhlaWdodD0iMjMxNyIgcng9IjMyNiIgcnk9IjMyNiIvPg0KICA8cGF0aCBmaWxsPSIjRkVGRUZFIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGQ9Ik0xNjIyIDIzMTdsMCAtNzk4IDI2OCAwIDQwIC0zMTAgLTMwOCAwIDAgLTE5OWMwLC05MCAyNSwtMTUxIDE1NCwtMTUxbDE2NSAwIDAgLTI3OGMtMjksLTQgLTEyNywtMTMgLTI0MCwtMTMgLTIzOCwwIC00MDAsMTQ1IC00MDAsNDExbDAgMjMwIC0yNjkgMCAwIDMxMCAyNjkgMCAwIDc5OCAzMjEgMCAwIDB6Ii8+DQogPC9nPg0KPC9zdmc+DQo="/></a><div class="favicon_name">Facebook</div></div>
+            <div class="favicon_img"><a href="https://twitter.com"><img style="width: 50px" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8IS0tIENyZWF0b3I6IENvcmVsRFJBVyBYNyAtLT4NCjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMjM3cHgiIGhlaWdodD0iMjM3cHgiIHZlcnNpb249IjEuMSIgc2hhcGUtcmVuZGVyaW5nPSJnZW9tZXRyaWNQcmVjaXNpb24iIHRleHQtcmVuZGVyaW5nPSJnZW9tZXRyaWNQcmVjaXNpb24iIGltYWdlLXJlbmRlcmluZz0ib3B0aW1pemVRdWFsaXR5IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCINCnZpZXdCb3g9IjAgMCAxNjU5IDE2NTkiDQogeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPg0KIDxnIGlkPSJMYXllcl94MDAyMF8xIj4NCiAgPG1ldGFkYXRhIGlkPSJDb3JlbENvcnBJRF8wQ29yZWwtTGF5ZXIiLz4NCiAgPHJlY3QgZmlsbD0iIzBGQjdFQiIgd2lkdGg9IjE2NTkiIGhlaWdodD0iMTY1OSIgcng9IjIzMyIgcnk9IjIzMyIvPg0KICA8cGF0aCBmaWxsPSIjRkVGRUZFIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGQ9Ik0xMzk1IDQ0NGMtMjgsOCAtNTEsNyAtNTEsN2wxIC02YzI3LC0yMSA5NCwtODcgMTAzLC0xMTggNCwtMTMgLTEsLTE3IC0xLC0xOGwtODYgMzcgLTcyIDMyIDAgMGMtNTAsLTUyIC0xMjUsLTg2IC0yMTAsLTg2IC0xNTAsMCAtMjcyLDEwNiAtMjcyLDIzNyAwLDI1IDQsNjggMTIsOTAgMCw3IDAsLTcgMCwwIC05NywtMyAtMjIxLC00MiAtMzMxLC05OCAtMjE4LC0xMTAgLTIzMiwtMTg3IC0yMzIsLTE4NyAtMzQsMzcgLTUyLDE1NyAtMTcsMjUxIDIyLDYwIDk5LDExNSA5OSwxMTVsMCAwYzAsMCAtMzUsMCAtNzAsLTEyIC0zNiwtMTIgLTQ5LC0yNCAtNDksLTI0IC0yMiw1MiAyMSwxNDQgOTUsMjExIDQyLDM4IDEyMSw2MyAxMjEsNjNsLTEyMyAzYy03LDExOSAyNTAsMTkwIDI1MCwxOTBsMCAwYy03NSw1OCAtMTYyLDkzIC0yNTYsOTMgLTQ4LDAgLTk1LC03IC0xNDAsLTIxIDEyNCwxMDIgMjgzLDE3MyA0NTUsMTYzIDQ1OSwtMjQgNzE3LC00MTcgNzI5LC04MDRsMSAxYzAsMCAyMiwtMTEgNjcsLTU3IDQ2LC00NiA3NSwtMTAwIDc1LC0xMDAgMCwwIC02OSwzMCAtOTgsMzh6Ii8+DQogPC9nPg0KPC9zdmc+DQo=" /></a><div class="favicon_name">Twitter</div></div>
+            <div class="favicon_img"><a href="https://youtube.com"><img style="width: 50px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAE/UlEQVR4Xu2bW0wcZRTH/+cMC4uUSo1iYmyByrZ9GWYxvhBfqPqiMZqYgI/Gy4sSk2oTX4zX+CCgD5IaH2qC8U1rfGhiTIyXtBpfDHaBpGkCZZdekjZpuS2FLjDnmG/oIpe1uGRndra7kxA2wJzv/H/zP/N9882BUOYHlbl+VABUHFDmBColUOYGqNwEb1sCyebmKBoaDrHIXiG6l4B7ANytRLtJtV5FdoG5FkAdqdaCKOqK1LBl1bBqtQIRUY2wakSACDNbIsJgZgZ4vfsEEJhfMrsi4jKwLEQrTLRMq5+XxHUzFnNGgUXzRUQ3SHVBgBuWalqI5giYVaIpVr3mMl900+lzsfHxzH85PSeAlOMcFpGjzPwEgJoSLxMD7Ccwf9py5sypzVo2ABhrba2J1NV9AeDFEhedO33V49cikZ5HhoaWs3+wBkA7O6smZ2ZOQvXJO1L8LVFKdLI5FnuOTpxwzY/WACTj8fdJ9b07WfyaNqK3mhOJ/jUAk7a9x9wwGKgrCwAiM3e57t7Gs2fnPQdMOs7rCgyUhfhsKQAvtQwPD3oAUrb9G5g7ywmAiPywf3T0abrY0VHrzs/PgjlSTgAAzDcdONBAk/H4o6r6R5mJ9+SK6zqUamt7BUTHyxEAAc/TpOO8q8AH5QhAgTeNAz4H0Wt+AWgcGMBUXx9WLl3ya4gdx1Wgl1KO8y2Arh1H2ebEpkQCmslgbnAQs4OD3uewHAR8RUnH+YWAx/xKygDIHsYFU/39WDy15ZnEr+FvG9csi40D/gbQ7lcG6wFkx1g8fToUZaHA7zThOOcZ2B8kADNWKMqCaMQ44CqAxqABhKEsBEgaAGkAu4oFoMhlcZUmbHuZmauKDaAoZSEyaxygfok3cXPdBLcbL6jZwuwlhhJAgGVxM9QAAiiLTOgB+DxblBiAvj6YRVQBj/ADMAsm8wxhniV8eI4INwBvydzbi5XLlwt40TeECudN0JsGC2/3LRBXp0HbXvJzPzCfdYDPdt/qolsLoTkA9X557P8CCMDuuSReMdPgFQD3FwtAUHbPpU+ACUrG4+Ok+lDQAAK3e26Bw3TecYYs4OEgARTJ7lskZjdEfmbg8SAAFNPuufR5W2JJ2/6GmLv9BBASu+eSOGi2xI4x0OMXAG9b3N/FzI5TJ+BjMwu8A+DDHUcp4ROV6A3zYuRlEH1Zwjp2nDoRdVOqvb0DIn/uOEoJn8iq9urr8YWFGQDVJawl/9RF5ppGR/esNki0tf0KosP5RyndM8wU2JJIPLsKIB7vgeqx0pWTf+ak+kLTyMjXHoBkPN5Aqhf8fCjKP0X/zhDV69FIZN8DQ0MLa21yqXj8bah+5N+w4YlMqkeaRkY+Mxn92yjZ1WWlxsa+J9VnwpOqD5kQfdeUSHQT4L0P2dAq63WLTk/3CnBkczOzD6kEGlIAJaKB5ljsaLZLdAuAbEZJ2z4E5lcJeApAa6CZFn6wtIr8aFnWJ/sSib82h9/2P0bOHTxYH41GW82egQD3AWhgot26+kLVdJbWZlvlVTUKItNdXmPa5i3maphWedMyz1zltcwDVSJS5bXOA+adJG1ok2d2IbIC1RVYlvm+pCIZmHZ55gwDN02rPJuWeZEFYp5XYJ5U08Q8J6qzDExD9TozX3gwFptYf8XzBlD4CxKuiNs6IFzpFj6bCoDCMy2tiBUHlNb1Kny2FQcUnmlpRfwHQLCRGGi4baUAAAAASUVORK5CYII=" /></a><div class="favicon_name">Youtube</div></div>
+            <div class="favicon_img"><a href="https://amazon.com"><img style="width: 50px" src="data:image/png;base64,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" /></a><div class="favicon_name">Amazon</div></div>
+        </div>
+    </div></div></div>
+
+<script type="text/javascript">
+	function search(){
+		if(document.getElementById("search_input").value != ""){
+			window.location.href = "${BASE_URL}" + document.getElementById("search_input").value;
+			document.getElementById("search_input").value = "";
+		}
+		return false;
+	}
+</script>
+</body></html>
